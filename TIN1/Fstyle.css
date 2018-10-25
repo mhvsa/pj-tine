@@ -1,0 +1,43 @@
+body {
+  background-color: white;
+  background-image: url("logo.png");
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-size: 25%;
+}
+
+.banner {
+  margin-right: 10%;
+  padding: 30px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 50px;
+  margin-left: 10%;
+  margin-bottom: 20px;
+  text-align: center;
+  background-color: rgb(216, 166, 166);
+}
+
+article {
+  margin-bottom: 10px;
+}
+
+article .header {
+  border-bottom-style: solid;
+  margin-right: 10%;
+  border-bottom-color: gray;
+  font-size: 25px;
+  margin-bottom: 10px;
+  text-decoration: underline;
+  margin-left: 0;
+}
+
+article .content {
+  margin-right: 10%;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  margin-left: 10%;
+  text-align: justify;
+  background-color: lightgray;
+  border: dotted pink thick;
+}

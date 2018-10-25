@@ -1,0 +1,16 @@
+.column {
+  float: left;
+  width: 50%;
+}
+
+img {
+  max-width: 75px;
+  width: 100%;
+  float: left;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
