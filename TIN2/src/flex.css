@@ -1,0 +1,104 @@
+.Header {
+  height: 200px;
+  margin: 120px 50px 50px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+}
+
+.Header img {
+  height: 100%;
+  margin-bottom: 20px;
+  box-shadow: 10px 10px 5px gray;
+  border-radius: 30px;
+  transform: rotate(-10deg);
+}
+
+.Header .Caption {
+  font-family: 'Calligraffitti', cursive;
+  font-size: large;
+  text-align: center;
+}
+
+div {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.Content {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.Content .Gallery {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 20%;
+}
+
+.Content .Gallery img {
+  min-width: 100px;
+  flex: 0 0 20%;
+  width: 100%;
+}
+
+.Content .Text {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 0 1 80%;
+  margin: 40px;
+}
+
+.Content p {
+  flex: 0 1 25%;
+  box-sizing: border-box;
+  color: #171e42;
+  padding: 10px;
+}
+
+.Content p img {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+.Content p span {
+  float: right;
+  padding: 5px;
+  text-align: center;
+  font-size: large;
+  color: red;
+}
+
+
+footer {
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: xx-large;
+}
+
+@media (max-width: 1200px){
+  .Content p {
+    flex: 0 1 33%;
+  }
+}
+
+@media (max-width: 1000px){
+  .Content p {
+    flex: 0 1 50%;
+  }
+}
+
+@media (max-width: 800px){
+  .Content {
+    flex-direction: column;
+  }
+  .Content .Text {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+}

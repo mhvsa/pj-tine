@@ -1,0 +1,105 @@
+.Header {
+  margin-top: 75px;
+  display: grid;
+  height: 100%;
+  grid-template-columns: 0.5fr 400px 0.5fr;
+  grid-template-rows: 1fr 0.5fr;
+  grid-gap: 1px 1px;
+  grid-template-areas: ". image ." ". caption .";
+}
+
+.Header img {
+  width: 100%;
+  grid-area: image;
+  margin-bottom: 20px;
+  box-shadow: 10px 10px 5px gray;
+  border-radius: 30px;
+  transform: rotate(-10deg);
+}
+
+.Header .Caption {
+  grid-area: caption;
+  font-family: 'Calligraffitti', cursive;
+  font-size: large;
+  text-align: center;
+}
+
+div {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.Content {
+  margin: 30px;
+  display: grid;
+  height: 100%;
+  grid-template-columns: 0.5fr 1.5fr;
+  grid-template-rows: 1fr;
+  grid-gap: 1px 1px;
+  grid-template-areas: "gallery text";
+}
+
+.Content .Gallery {
+  grid-area: gallery;
+}
+
+.Content .Gallery img {
+  min-width: 100px;
+  flex: 0 0 20%;
+  width: 100%;
+}
+
+.Content .Text {
+  grid-area: text;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+.Content p {
+  float: none;
+}
+
+.Content p img {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+.Content p span {
+  float: right;
+  padding: 5px;
+  text-align: center;
+  font-size: large;
+  color: red;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: xx-large;
+}
+
+@media (max-width: 1200px){
+  .Content .Text {
+    grid-template-columns: repeat(3 ,1fr);
+  }
+}
+
+@media (max-width: 1000px){
+  .Content .Text {
+    grid-template-columns: repeat(2 ,1fr);
+  }
+}
+
+@media (max-width: 800px){
+  .Content {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "text" "gallery" 
+  }
+  .Content .Text {
+    grid-template-columns: repeat(1 ,1fr);
+  }
+}
