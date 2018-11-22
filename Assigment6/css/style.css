@@ -1,0 +1,8 @@
+.ValidateForm input{
+  display: block;
+  margin: 2px;
+}
+
+.Invalid {
+  border: 2px solid red;
+}
