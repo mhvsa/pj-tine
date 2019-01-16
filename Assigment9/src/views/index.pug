@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    script(src="client.js")
+    title TIN-e Assigment8
+  body
+    select#operation(name="operation")
+      option(value="add") Add
+      option(value="sub") Substract
+      option(value="mul") Multiply
+      option(value="div") Divide
+    input#a(type="number", name="a")
+    input#b(type="number", name="b")
+    button(onclick="handleClicked()") Submit
+    p#result

@@ -1,0 +1,38 @@
+@import "../theme.module.scss";
+
+.Container {
+  margin: 10px;
+}
+
+.Label {
+  margin: 5px 0px;
+  font: 15px $font;
+}
+.InvalidMessage.Invalid {
+  display: inline;
+  font: 10px $font;
+  color: #fc7272;
+}
+
+.Input {
+  width: 100%;
+  padding: 5px;
+  height: 30px;
+  box-sizing: border-box;
+}
+
+.Input.Invalid {
+  border: 2px solid #fc7272;
+}
+
+.Input.Valid {
+  border: 2px solid #5bc881;
+}
+
+.InvalidMessage.Invalid {
+  display: inline;
+}
+
+.InvalidMessage.Valid {
+  display: none;
+}

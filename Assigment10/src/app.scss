@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+$app-font: 'Montserrat', sans-serif;
+
+.app {
+  font-family: $app-font;
+  margin: 15px;
+  padding: 10px;
+  width: 250px;
+  box-sizing: border-box;
+  border: 1px solid #727272;
+}
