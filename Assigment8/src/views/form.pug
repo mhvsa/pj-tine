@@ -1,0 +1,11 @@
+extends layout
+block content
+  form.form#myForm(action="/formdata" method="GET")
+    label(for="name") Name:
+    input#name(type="text" name="name") 
+    label(for="email") Email:
+    input#email(type="text" name="email")
+    label(for="age") Age:
+    input#age(type="number" name="age")
+    label(for="submit")
+    input#submit(type="submit", value="Submit")
