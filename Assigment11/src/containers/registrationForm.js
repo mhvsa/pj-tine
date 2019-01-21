@@ -4,6 +4,7 @@ import Header from "../components/header";
 import classes from "./registrationForm.module.scss";
 import { required, minLen, isEmail } from "../validation";
 import { updateObject } from "../utils";
+import LabeledValue from "../components/labeledValue";
 
 const getInitialState = () => ({
   formElements: {
@@ -45,7 +46,6 @@ class RegistrationForm extends Component {
   constructor(props) {
     super(props);
     this.state = getInitialState();
-    console.log(this.state);
   }
 
   inputChangedHandler = (event, inputId) => {
@@ -63,6 +63,16 @@ class RegistrationForm extends Component {
       formIsValid = updatedForm[inputIdentifier].isValid && formIsValid;
     }
     this.setState({ formElements: updatedForm, formIsValid: formIsValid });
+  };
+
+  handleSubmit = () => {
+    const state = getInitialState();
+    const submitedValues = {};
+    submitedValues.email = this.state.formElements.email.value;
+    submitedValues.password = this.state.formElements.password.value;
+    submitedValues.age = this.state.formElements.age.value;
+    state.submitedValues = submitedValues;
+    this.setState(state);
   };
 
   render() {
@@ -85,17 +95,39 @@ class RegistrationForm extends Component {
         invalidMessage={element.config.invalidMessage}
       />
     ));
+
+    let submitedValues;
+
+    if (this.state.submitedValues) {
+      submitedValues = [];
+      for (let key in this.state.submitedValues) {
+        submitedValues.push(
+          <LabeledValue
+            label={key}
+            value={this.state.submitedValues[key]}
+            key={key}
+          />
+        );
+      }
+    }
+
     return (
-      <div className={classes.Form}>
-        <Header>Registration</Header>
-        {formElements}
-        <button
-          disabled={!this.state.formIsValid}
-          onClick={() => this.setState(getInitialState())}
-        >
-          Submit
-        </button>
-      </div>
+      <>
+        <div className={classes.Form}>
+          <Header>Registration</Header>
+          {formElements}
+          <button
+            disabled={!this.state.formIsValid}
+            onClick={this.handleSubmit}
+          >
+            Submit
+          </button>
+        </div>
+        <div className={classes.Submited}>
+          <Header>Submited</Header>
+          {submitedValues}
+        </div>
+      </>
     );
   }
 }
