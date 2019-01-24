@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./App.module.scss";
 import styled from "styled-components";
-import { Route, NavLink } from "react-router-dom";
+import { Route, NavLink, Redirect } from "react-router-dom";
 import { createGlobalStyle } from "styled-components";
 import Students from "./containers/students";
 import StudentForm from "./containers/studentForm";
@@ -36,6 +36,7 @@ const HeaderNavItem = styled.div`
 const App = props => {
   return (
     <>
+      <Redirect from="/" to="/students" />
       <GlobalStyle />
       <Header>
         <NavLink
@@ -72,11 +73,7 @@ const App = props => {
       <Route
         exact
         path="/components/header"
-        render={() => (
-          <Header label="Label" value="Value">
-            Header
-          </Header>
-        )}
+        render={() => <HeaderComponent>Header</HeaderComponent>}
       />
     </>
   );
